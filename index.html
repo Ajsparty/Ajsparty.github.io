@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Aidan Swenson | Personal Site</title>
-  <meta name="description" content="Computational Data Science student at Michigan State University. Projects in machine learning, data visualization, and full-stack data applications." />
+  <meta name="description" content="Computational Data Science student at Michigan State University. Projects in machine learning, data visualization, quantitative finance, and full-stack data applications." />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%23ff2a00' d='M16 2 30 30H2z'/%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -58,7 +58,7 @@
         </h1>
 
         <p class="hero-subtitle">
-          I’m <strong>Aidan Swenson</strong> — a <span class="accent">Computational Data Science</span> student at Michigan State University focused on building production-grade machine learning systems and insightful data products.
+          I’m <strong>Aidan Swenson</strong> — a <span class="accent">Computational Data Science</span> student at Michigan State University focused on building production-grade machine learning systems, insightful data products, and quantitative finance tools.
         </p>
 
         <div class="founder-badge" aria-label="Founder of B Team Analytics">
@@ -98,12 +98,12 @@
           <div class="card">
             <h3>What I do</h3>
             <p>
-              Junior pursuing a B.S. in Computational Data Science at Michigan State University. I design and deploy end-to-end machine learning pipelines, build interactive data visualization dashboards, and develop full-stack data applications. My work emphasizes model interpretability, scalability, and real-world impact.
+              Junior pursuing a B.S. in Computational Data Science at Michigan State University. I design and deploy end-to-end machine learning pipelines, build interactive data visualization dashboards, develop quantitative finance tools, and create full-stack data applications. My work emphasizes model interpretability, scalability, and real-world impact.
             </p>
             <ul class="bullets">
               <li>⚙️ End-to-end ML pipelines &amp; MLOps</li>
               <li>📊 Interactive visualization &amp; storytelling</li>
-              <li>🚀 Production deployment &amp; monitoring</li>
+              <li>📈 Quantitative finance &amp; portfolio analytics</li>
             </ul>
           </div>
 
@@ -116,6 +116,8 @@
               <span class="pill">Scikit-learn</span>
               <span class="pill">TensorFlow</span>
               <span class="pill">PyTorch</span>
+              <span class="pill">yfinance</span>
+              <span class="pill">Prophet</span>
               <span class="pill">Streamlit / Dash</span>
               <span class="pill">React</span>
               <span class="pill">FastAPI</span>
@@ -123,7 +125,7 @@
               <span class="pill">Git</span>
             </div>
             <p class="muted">
-              Core stack for modern data science and ML engineering.
+              Core stack for modern data science, ML engineering, and quantitative finance.
             </p>
           </div>
         </div>
@@ -146,7 +148,7 @@
               <div class="chip">2025</div>
             </div>
             <p>
-              End-to-end ML pipeline predicting student academic performance using demographic, behavioral, and academic features from public education datasets. Achieved R² = 0.87 with Random Forest after rigorous feature engineering and hyperparameter tuning.
+              End-to-end ML pipeline predicting student academic performance using demographic, behavioral, and academic features. Achieved R² = 0.87 with Random Forest after feature engineering and hyperparameter tuning.
             </p>
             <div class="meta">
               <span class="pill">Python</span>
@@ -167,7 +169,7 @@
               <div class="chip">2024</div>
             </div>
             <p>
-              Interactive real-time analytics dashboard visualizing global pandemic trends with choropleth maps, time-series forecasting, and growth-rate analysis. Built with Plotly Dash and deployed for university research use.
+              Interactive real-time analytics dashboard visualizing global pandemic trends with choropleth maps, time-series forecasting, and growth-rate analysis. Built with Plotly Dash.
             </p>
             <div class="meta">
               <span class="pill">Python</span>
@@ -184,11 +186,33 @@
           <!-- Project 3 -->
           <article class="card hover">
             <div class="card-top">
+              <h3>Equity Analytics &amp; Portfolio Optimizer</h3>
+              <div class="chip">2025</div>
+            </div>
+            <p>
+              Quantitative finance tool that pulls real-time stock data via yfinance, forecasts prices with Prophet, and optimizes portfolios using Modern Portfolio Theory (Markowitz). Features efficient frontier visualization, Sharpe ratio calculations, and backtesting. Built a personal dashboard I use daily.
+            </p>
+            <div class="meta">
+              <span class="pill">Python</span>
+              <span class="pill">yfinance</span>
+              <span class="pill">Prophet</span>
+              <span class="pill">Plotly</span>
+              <span class="pill">Pandas</span>
+            </div>
+            <div class="actions">
+              <a class="link" href="https://github.com/Ajsparty/equity-portfolio-optimizer" rel="noopener">Demo</a>
+              <a class="link" href="https://github.com/Ajsparty/equity-portfolio-optimizer" rel="noopener">Code</a>
+            </div>
+          </article>
+
+          <!-- Project 4 -->
+          <article class="card hover">
+            <div class="card-top">
               <h3>TaskFlow Full-Stack Platform</h3>
               <div class="chip">2025</div>
             </div>
             <p>
-              Production-ready full-stack task management system with JWT authentication, real-time updates, priority algorithms, and deadline tracking. React frontend + FastAPI backend with MongoDB and automated testing.
+              Production-ready full-stack task management system with JWT authentication, real-time updates, priority algorithms, and deadline tracking. React frontend + FastAPI backend with MongoDB and Docker.
             </p>
             <div class="meta">
               <span class="pill">React</span>
@@ -202,14 +226,14 @@
             </div>
           </article>
 
-          <!-- Project 4 -->
+          <!-- Project 5 -->
           <article class="card hover">
             <div class="card-top">
               <h3>Sentiment Analysis API</h3>
               <div class="chip">2024</div>
             </div>
             <p>
-              Scalable NLP service for social-media sentiment classification using fine-tuned BERT and VADER. Deployed as FastAPI microservice with Redis caching and Prometheus monitoring. 94% accuracy on held-out test set.
+              Scalable NLP microservice for social-media sentiment classification using fine-tuned BERT and VADER. Deployed as FastAPI service with Redis caching. 94% accuracy on test set.
             </p>
             <div class="meta">
               <span class="pill">Python</span>
@@ -253,8 +277,8 @@
 
           <a class="list-item" href="#" rel="noopener">
             <div>
-              <div class="list-title">Lessons from Building a Real-Time Dashboard</div>
-              <div class="muted">Performance pitfalls and caching strategies when handling millions of COVID records.</div>
+              <div class="list-title">Building a Personal Stock Portfolio Optimizer</div>
+              <div class="muted">How I combined Prophet forecasting with Markowitz optimization for my own daily trading dashboard.</div>
             </div>
             <span class="arrow">↗</span>
           </a>
@@ -273,7 +297,7 @@
         <div class="grid-2">
           <div class="card">
             <h3>Reach me</h3>
-            <p class="muted">Open to internships, research collaborations, and interesting data problems.</p>
+            <p class="muted">Open to internships, research collaborations, and interesting data or quant finance problems.</p>
             <div class="contact-links">
               <a class="link" href="mailto:Swenso44@msu.edu">Swenso44@msu.edu</a>
               <a class="link" href="https://github.com/Ajsparty" rel="noopener">GitHub</a>
