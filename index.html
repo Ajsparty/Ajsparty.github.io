@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aidan Swenson | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap');
+        :root {
+            --primary: #6366f1;
+        }
+        body {
+            font-family: 'Inter', system_ui, sans-serif;
+        }
+        .font-display {
+            font-family: 'Space Grotesk', 'Inter', sans-serif;
+            font-weight: 600;
+        }
+        .section-header {
+            position: relative;
+            display: inline-block;
+        }
+        .section-header:after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60%;
+            height: 3px;
+            background: linear-gradient(to right, #6366f1, #a5b4fc);
+            border-radius: 3px;
+        }
+        .project-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+        .nav-link {
+            transition: color 0.2s ease;
+        }
+        .nav-link:hover {
+            color: #6366f1;
+        }
+        .skill-bar {
+            height: 6px;
+            background: linear-gradient(to right, #6366f1, #a5b4fc);
+            border-radius: 9999px;
+            transition: width 1.5s ease-out;
+        }
+        .glass {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(20px);
+        }
+        .dark-glass {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-200">
+    <!-- Navbar -->
+    <nav class="bg-slate-900 border-b border-slate-800 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex items-center gap-x-3">
+                    <div class="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center">
+                        <span class="text-white font-bold text-2xl">AS</span>
+                    </div>
+                    <div>
+                        <span class="font-display text-2xl font-semibold tracking-tighter">Aidan Swenson</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center gap-x-10 text-sm font-medium">
+                    <a href="#about" class="nav-link text-slate-300 hover:text-white">About</a>
+                    <a href="#skills" class="nav-link text-slate-300 hover:text-white">Skills</a>
+                    <a href="#projects" class="nav-link text-slate-300 hover:text-white">Projects</a>
+                    <a href="#education" class="nav-link text-slate-300 hover:text-white">Education</a>
+                    <a href="#contact" class="nav-link text-slate-300 hover:text-white">Contact</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden w-10 h-10 flex items-center justify-center text-slate-400 hover:text-white">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+
+                <!-- CTA Button -->
+                <div class="hidden md:block">
+                    <a href="#contact" 
+                       class="px-5 py-2.5 bg-white text-slate-950 hover:bg-slate-100 transition-colors text-sm font-semibold rounded-2xl flex items-center gap-x-2">
+                        <span>Get in touch</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-slate-800 bg-slate-900">
+            <div class="px-6 py-6 flex flex-col gap-y-4 text-sm">
+                <a href="#about" class="py-2 text-slate-300">About</a>
+                <a href="#skills" class="py-2 text-slate-300">Skills</a>
+                <a href="#projects" class="py-2 text-slate-300">Projects</a>
+                <a href="#education" class="py-2 text-slate-300">Education</a>
+                <a href="#contact" class="py-2 text-slate-300">Contact</a>
+                <a href="#contact" class="mt-2 px-5 py-3 bg-white text-slate-950 text-center font-semibold rounded-2xl">Get in touch</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="max-w-7xl mx-auto px-6 pt-16 pb-24">
+        <div class="grid md:grid-cols-12 gap-12 items-center">
+            <div class="md:col-span-7">
+                <div class="inline-flex items-center gap-x-2 px-4 py-1.5 bg-slate-900 border border-slate-800 rounded-3xl mb-6">
+                    <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+                    <span class="text-emerald-400 text-sm font-medium">Open to opportunities • Class of 2027</span>
+                </div>
+                
+                <h1 class="text-6xl md:text-7xl font-display font-semibold tracking-tighter leading-none mb-6">
+                    Aidan Swenson<br>
+                    <span class="bg-gradient-to-r from-indigo-400 via-violet-400 to-fuchsia-400 bg-clip-text text-transparent">Data Scientist</span>
+                </h1>
+                
+                <p class="max-w-lg text-xl text-slate-400 mb-10">
+                    Computational Data Science student at Michigan State University passionate about building intelligent systems and extracting actionable insights from complex data.
+                </p>
+
+                <div class="flex flex-wrap gap-4">
+                    <a href="#projects" 
+                       class="group px-8 py-4 bg-indigo-600 hover:bg-indigo-700 transition-all text-white font-semibold rounded-3xl flex items-center gap-x-3 shadow-lg shadow-indigo-950">
+                        <span>Explore Projects</span>
+                        <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                    <a href="#contact" 
+                       class="px-8 py-4 border border-slate-700 hover:bg-slate-900 transition-colors font-semibold rounded-3xl flex items-center gap-x-3">
+                        <span>Contact Me</span>
+                    </a>
+                </div>
+
+                <div class="flex items-center gap-x-6 mt-12">
+                    <div class="flex -space-x-3">
+                        <div class="w-8 h-8 bg-slate-700 rounded-full border-2 border-slate-950 flex items-center justify-center text-xs">MSU</div>
+                    </div>
+                    <div class="text-sm text-slate-500">
+                        Michigan State University • East Lansing, MI
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Visual -->
+            <div class="md:col-span-5 relative">
+                <div class="aspect-square bg-gradient-to-br from-indigo-950 to-slate-900 rounded-[3rem] p-3 shadow-2xl">
+                    <div class="w-full h-full bg-slate-900 rounded-[2.25rem] overflow-hidden relative flex items-center justify-center">
+                        <div class="text-center">
+                            <div class="mx-auto w-32 h-32 bg-gradient-to-br from-indigo-500 to-violet-500 rounded-full flex items-center justify-center mb-6">
+                                <i class="fas fa-chart-line text-white text-6xl"></i>
+                            </div>
+                            <div class="text-sm uppercase tracking-[3px] text-indigo-400 font-medium">DATA • INSIGHTS • IMPACT</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="max-w-7xl mx-auto px-6 py-20 border-t border-slate-800">
+        <div class="grid md:grid-cols-12 gap-x-12">
+            <div class="md:col-span-5 mb-12 md:mb-0">
+                <div class="sticky top-24">
+                    <span class="text-indigo-400 font-semibold tracking-widest text-sm">CHAPTER 01</span>
+                    <h2 class="text-5xl font-display font-semibold tracking-tighter mt-3">About Me</h2>
+                </div>
+            </div>
+            <div class="md:col-span-7 text-lg text-slate-300 space-y-6">
+                <p>
+                    I am a junior pursuing a B.S. in Computational Data Science at Michigan State University. My academic journey has equipped me with a robust foundation in statistical modeling, machine learning algorithms, and software engineering principles.
+                </p>
+                <p>
+                    I thrive at the intersection of data and technology, where I enjoy transforming raw datasets into compelling stories and building scalable applications that solve real-world problems. My experience spans academic research, personal projects, and collaborative hackathons.
+                </p>
+                <p>
+                    Currently, I am seeking internships and research opportunities in data science, machine learning engineering, or full-stack development roles for Summer 2026.
+                </p>
+                
+                <div class="pt-6 flex gap-4">
+                    <a href="https://github.com/Ajsparty" target="_blank" class="flex items-center gap-x-2 text-sm hover:text-indigo-400 transition-colors">
+                        <i class="fab fa-github text-xl"></i> 
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/aidan-swenson-" target="_blank" class="flex items-center gap-x-2 text-sm hover:text-indigo-400 transition-colors">
+                        <i class="fab fa-linkedin text-xl"></i> 
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="mailto:Swenso44@msu.edu" class="flex items-center gap-x-2 text-sm hover:text-indigo-400 transition-colors">
+                        <i class="fas fa-envelope text-xl"></i> 
+                        <span>Email</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="bg-slate-900 py-20 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-indigo-400 font-semibold tracking-widest text-sm">CHAPTER 02</span>
+                <h2 class="text-5xl font-display font-semibold tracking-tighter mt-3">Technical Skills</h2>
+                <p class="mt-4 text-slate-400 max-w-md mx-auto">Proficient across the modern data science and web development stack</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Programming -->
+                <div class="bg-slate-950 border border-slate-800 rounded-3xl p-8">
+                    <div class="flex items-center gap-x-4 mb-6">
+                        <div class="w-12 h-12 bg-emerald-950 text-emerald-400 rounded-2xl flex items-center justify-center">
+                            <i class="fas fa-code text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-xl">Programming</h3>
+                            <p class="text-sm text-slate-500">Languages &amp; Core</p>
+                        </div>
+                    </div>
+                    <div class="space-y-4 text-sm">
+                        <div><div class="flex justify-between mb-1.5"><span>Python</span><span class="text-emerald-400">95%</span></div><div class="h-1.5 bg-slate-800 rounded"><div class="skill-bar w-[95%]"></div></div></div>
+                        <div><div class="flex justify-between mb-1.5"><span>SQL</span><span class="text-emerald-400">88%</span></div><div class="h-1.5 bg-slate-800 rounded"><div class="skill-bar w-[88%]"></div></div></div>
+                        <div><div class="flex justify-between mb-1.5"><span>R</span><span class="text-emerald-400">75%</span></div><div class="h-1.5 bg-slate-800 rounded"><div class="skill-bar w-[75%]"></div></div></div>
+                        <div><div class="flex justify-between mb-1.5"><span>JavaScript</span><span class="text-emerald-400">80%</span></div><div class="h-1.5 bg-slate-800 rounded"><div class="skill-bar w-[80%]"></div></div></div>
+                    </div>
+                </div>
+
+                <!-- Data Science -->
+                <div class="bg-slate-950 border border-slate-800 rounded-3xl p-8">
+                    <div class="flex items-center gap-x-4 mb-6">
+                        <div class="w-12 h-12 bg-violet-950 text-violet-400 rounded-2xl flex items-center justify-center">
+                            <i class="fas fa-chart-bar text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-xl">Data Science &amp; ML</h3>
+                            <p class="text-sm text-slate-500">Analytics &amp; Modeling</p>
+                        </div>
+                    </div>
+                    <div class="space-y-4 text-sm">
+                        <div><div class="flex justify-between mb-1.5"><span>Pandas &amp; NumPy</span><span class="text-violet-400">92%</span></div><div class="h-1.5 bg-slate-800 rounded"><div class="skill-bar w-[92%]"></div></div></div>
+                        <div><div class="flex justify-between mb-1.5"><span>Scikit-learn</span><span class="text-violet-400">85%</span></div><div class="h-1.5 bg-slate-800 rounded"><div class="skill-bar w-[85%]"></div></div></div>
+                        <div><div class="flex justify-between mb-1.5"><span>TensorFlow / Keras</span><span class="text-violet-400">68%</span></div><div class="h-1.5 bg-slate-800 rounded"><div class="skill-bar w-[68%]"></div></div></div>
+                        <div><div class="flex justify-between mb-1.5"><span>Statistical Analysis</span><span class="text-violet-400">82%</span></div><div class="h-1.5 bg-slate-800 rounded"><div class="skill-bar w-[82%]"></div></div></div>
+                    </div>
+                </div>
+
+                <!-- Web Dev -->
+                <div class="bg-slate-950 border border-slate-800 rounded-3xl p-8">
+                    <div class="flex items-center gap-x-4 mb-6">
+                        <div class="w-12 h-12 bg-amber-950 text-amber-400 rounded-2xl flex items-center justify-center">
+                            <i class="fas fa-globe text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-xl">Web Development</h3>
+                            <p class="text-sm text-slate-500">Frontend &amp; Backend</p>
+                        </div>
+                    </div>
+                    <div class="space-y-4 text-sm">
+                        <div><div class="flex justify-between mb-1.5"><span>React / Next.js</span><span class="text-amber-400">78%</span></div><div class="h-1.5 bg-slate-800 rounded"><div class="skill-bar w-[78%]"></div></div></div>
+                        <div><div class="flex justify-between mb-1.5"><span>Node.js / Express</span><span class="text-amber-400">72%</span></div><div class="h-1.5 bg-slate-800 rounded"><div class="skill-bar w-[72%]"></div></div></div>
+                        <div><div class="flex justify-between mb-1.5"><span>Tailwind CSS</span><span class="text-amber-400">90%</span></div><div class="h-1.5 bg-slate-800 rounded"><div class="skill-bar w-[90%]"></div></div></div>
+                        <div><div class="flex justify-between mb-1.5"><span>REST APIs</span><span class="text-amber-400">80%</span></div><div class="h-1.5 bg-slate-800 rounded"><div class="skill-bar w-[80%]"></div></div></div>
+                    </div>
+                </div>
+
+                <!-- Tools -->
+                <div class="bg-slate-950 border border-slate-800 rounded-3xl p-8">
+                    <div class="flex items-center gap-x-4 mb-6">
+                        <div class="w-12 h-12 bg-rose-950 text-rose-400 rounded-2xl flex items-center justify-center">
+                            <i class="fas fa-tools text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-xl">Tools &amp; Platforms</h3>
+                            <p class="text-sm text-slate-500">DevOps &amp; Collaboration</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-2 text-sm">
+                        <div class="px-4 py-1.5 bg-slate-800 rounded-2xl">Git &amp; GitHub</div>
+                        <div class="px-4 py-1.5 bg-slate-800 rounded-2xl">Jupyter</div>
+                        <div class="px-4 py-1.5 bg-slate-800 rounded-2xl">Docker</div>
+                        <div class="px-4 py-1.5 bg-slate-800 rounded-2xl">MongoDB</div>
+                        <div class="px-4 py-1.5 bg-slate-800 rounded-2xl">PostgreSQL</div>
+                        <div class="px-4 py-1.5 bg-slate-800 rounded-2xl">VS Code</div>
+                        <div class="px-4 py-1.5 bg-slate-800 rounded-2xl">Tableau</div>
+                        <div class="px-4 py-1.5 bg-slate-800 rounded-2xl">Streamlit</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="max-w-7xl mx-auto px-6 py-20">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-12">
+            <div>
+                <span class="text-indigo-400 font-semibold tracking-widest text-sm">CHAPTER 03</span>
+                <h2 class="text-5xl font-display font-semibold tracking-tighter mt-3">Featured Projects</h2>
+            </div>
+            <div class="mt-6 md:mt-0 flex flex-wrap gap-2" id="filter-buttons">
+                <button data-filter="all" class="active px-5 py-2 text-sm font-medium bg-indigo-600 text-white rounded-2xl">All Projects</button>
+                <button data-filter="ml" class="px-5 py-2 text-sm font-medium bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-2xl transition-colors">Machine Learning</button>
+                <button data-filter="viz" class="px-5 py-2 text-sm font-medium bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-2xl transition-colors">Data Visualization</button>
+                <button data-filter="web" class="px-5 py-2 text-sm font-medium bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-2xl transition-colors">Full-Stack Web</button>
+            </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-grid">
+            <!-- Project 1: ML -->
+            <div class="project-card bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden" data-category="ml">
+                <div class="h-56 bg-cover bg-center" style="background-image: url('https://picsum.photos/id/1015/600/400')"></div>
+                <div class="p-8">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="px-3 py-1 text-xs font-medium bg-emerald-950 text-emerald-400 rounded-full">Machine Learning</span>
+                        <span class="text-xs text-slate-500">Jan 2025</span>
+                    </div>
+                    <h3 class="font-semibold text-2xl tracking-tight mb-3">Student Performance Predictor</h3>
+                    <p class="text-slate-400 text-[15px] leading-relaxed mb-6">Built an end-to-end ML pipeline to predict student final grades using regression models. Achieved 87% R² score through advanced feature engineering and hyperparameter optimization.</p>
+                    
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="text-xs px-3 py-1 bg-slate-800 rounded-xl">Python</span>
+                        <span class="text-xs px-3 py-1 bg-slate-800 rounded-xl">Scikit-learn</span>
+                        <span class="text-xs px-3 py-1 bg-slate-800 rounded-xl">Streamlit</span>
+                        <span class="text-xs px-3 py-1 bg-slate-800 rounded-xl">Pandas</span>
+                    </div>
+
+                    <div class="flex items-center justify-between">
+                        <a href="https://github.com/Ajsparty/student-performance-predictor" target="_blank" 
+                           class="inline-flex items-center gap-x-2 text-sm font-medium text-indigo-400 hover:text-indigo-300">
+                            View on GitHub <i class="fas fa-external-link-alt text-xs ml-1"></i>
+                        </a>
+                        <span class="text-emerald-400 text-xs font-medium flex items-center gap-x-1">
+                            <i class="fas fa-check-circle"></i> <span>Deployed</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2: Viz -->
+            <div class="project-card bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden" data-category="viz">
+                <div class="h-56 bg-cover bg-center" style="background-image: url('https://picsum.photos/id/106/600/400')"></div>
+                <div class="p-8">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="px-3 py-1 text-xs font-medium bg-sky-950 text-sky-400 rounded-full">Data Visualization</span>
+                        <span class="text-xs text-slate-500">Nov 2024</span>
+                    </div>
+                    <h3 class="font-semibold text-2xl tracking-tight mb-3">COVID-19 Analytics Dashboard</h3>
+                    <p class="text-slate-400 text-[15px] leading-relaxed mb-6">Developed an interactive real-time dashboard using Plotly Dash to visualize global pandemic trends, including choropleth maps, time-series analysis, and predictive modeling components.</p>
+                    
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="text-xs px-3 py-1 bg-slate-800 rounded-xl">Python</span>
+                        <span class="text-xs px-3 py-1 bg-slate-800 rounded-xl">Plotly Dash</span>
+                        <span class="text-xs px-3 py-1 bg-slate-800 rounded-xl">Pandas</span>
+                        <span class="text-xs px-3 py-1 bg-slate-800 rounded-xl">NumPy</span>
+                    </div>
+
+                    <div class="flex items-center justify-between">
+                        <a href="https://github.com/Ajsparty/covid-19-dashboard" target="_blank" 
+                           class="inline-flex items-center gap-x-2 text-sm font-medium text-indigo-400 hover:text-indigo-300">
+                            View on GitHub <i class="fas fa-external-link-alt text-xs ml-1"></i>
+                        </a>
+                        <span class="text-emerald-400 text-xs font-medium flex items-center gap-x-1">
+                            <i class="fas fa-check-circle"></i> <span>Live Demo</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3: Web -->
+            <div class="project-card bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden" data-category="web">
+                <div class="h-56 bg-cover bg-center" style="background-image: url('https://picsum.photos/id/160/600/400')"></div>
+                <div class="p-8">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="px-3 py-1 text-xs font-medium bg-amber-950 text-amber-400 rounded-full">Full-Stack</span>
+                        <span class="text-xs text-slate-500">Feb 2025</span>
+                    </div>
+                    <h3 class="font-semibold text-2xl tracking-tight mb-3">TaskFlow • Full-Stack Task Manager</h3>
+                    <p class="text-slate-400 text-[15px] leading-relaxed mb-6">Architected a production-ready task management platform with user authentication (JWT), real-time updates, priority algorithms, and a polished React frontend connected to a Node.js/Express backend with MongoDB.</p>
+                    
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="text-xs px-3 py-1 bg-slate-800 rounded-xl">React</span>
+                        <span class="text-xs px-3 py-1 bg-slate-800 rounded-xl">Node.js</span>
+                        <span class="text-xs px-3 py-1 bg-slate-800 rounded-xl">Express</span>
+                        <span class="text-xs px-3 py-1 bg-slate-800 rounded-xl">MongoDB</span>
+                    </div>
+
+                    <div class="flex items-center justify-between">
+                        <a href="https://github.com/Ajsparty/taskflow-fullstack" target="_blank" 
+                           class="inline-flex items-center gap-x-2 text-sm font-medium text-indigo-400 hover:text-indigo-300">
+                            View on GitHub <i class="fas fa-external-link-alt text-xs ml-1"></i>
+                        </a>
+                        <span class="text-emerald-400 text-xs font-medium flex items-center gap-x-1">
+                            <i class="fas fa-check-circle"></i> <span>Deployed</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-10 text-center">
+            <p class="text-slate-400 text-sm">More projects available on my <a href="https://github.com/Ajsparty?tab=repositories" target="_blank" class="text-indigo-400 hover:underline">GitHub profile</a></p>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="bg-slate-900 py-20 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-indigo-400 font-semibold tracking-widest text-sm">CHAPTER 04</span>
+                <h2 class="text-5xl font-display font-semibold tracking-tighter mt-3">Education &amp; Experience</h2>
+            </div>
+
+            <div class="max-w-3xl mx-auto">
+                <div class="relative pl-8 border-l-2 border-slate-800 space-y-16">
+                    <!-- MSU -->
+                    <div class="relative">
+                        <div class="absolute -left-[9px] top-1.5 w-4 h-4 bg-indigo-600 rounded-full border-4 border-slate-900"></div>
+                        <div class="bg-slate-950 border border-slate-800 rounded-3xl p-8">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <div class="font-semibold text-xl">B.S. Computational Data Science</div>
+                                    <div class="text-indigo-400">Michigan State University</div>
+                                </div>
+                                <div class="text-right text-sm text-slate-500">
+                                    <div>Expected May 2027</div>
+                                    <div class="font-medium text-emerald-400">GPA: 3.72 / 4.0</div>
+                                </div>
+                            </div>
+                            <div class="mt-6 text-sm text-slate-400">
+                                Relevant Coursework: Machine Learning, Statistical Computing, Database Systems, Data Structures &amp; Algorithms, Natural Language Processing, Cloud Computing
+                            </div>
+                            <div class="mt-4 flex flex-wrap gap-2">
+                                <span class="text-xs bg-slate-800 px-3 py-1 rounded-2xl">Dean's List</span>
+                                <span class="text-xs bg-slate-800 px-3 py-1 rounded-2xl">Data Science Club</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hackathon / Experience -->
+                    <div class="relative">
+                        <div class="absolute -left-[9px] top-1.5 w-4 h-4 bg-violet-600 rounded-full border-4 border-slate-900"></div>
+                        <div class="bg-slate-950 border border-slate-800 rounded-3xl p-8">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <div class="font-semibold text-xl">Data Science Intern</div>
+                                    <div class="text-violet-400">MSU Office of Institutional Research</div>
+                                </div>
+                                <div class="text-sm text-slate-500">Summer 2025</div>
+                            </div>
+                            <ul class="mt-4 text-sm text-slate-400 space-y-2 list-disc pl-5">
+                                <li>Analyzed large-scale enrollment and retention datasets using Python and SQL</li>
+                                <li>Developed predictive models for student success metrics, improving institutional reporting accuracy by 18%</li>
+                                <li>Created automated dashboards in Tableau for university leadership</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="max-w-7xl mx-auto px-6 py-20 border-t border-slate-800">
+        <div class="max-w-2xl mx-auto text-center">
+            <span class="text-indigo-400 font-semibold tracking-widest text-sm">CHAPTER 05</span>
+            <h2 class="text-5xl font-display font-semibold tracking-tighter mt-3 mb-6">Let's Connect</h2>
+            <p class="text-xl text-slate-400">I'm currently seeking summer 2026 internships and research opportunities in data science and software engineering. I'd love to hear from you.</p>
+
+            <div class="mt-10">
+                <form id="contact-form" class="space-y-6 text-left">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-slate-400 mb-2">Full Name</label>
+                            <input type="text" class="w-full bg-slate-900 border border-slate-700 focus:border-indigo-500 rounded-2xl px-5 py-3.5 text-sm outline-none" placeholder="Jane Doe" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-400 mb-2">Email Address</label>
+                            <input type="email" class="w-full bg-slate-900 border border-slate-700 focus:border-indigo-500 rounded-2xl px-5 py-3.5 text-sm outline-none" placeholder="you@example.com" required>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-400 mb-2">Message</label>
+                        <textarea rows="5" class="w-full bg-slate-900 border border-slate-700 focus:border-indigo-500 rounded-3xl px-5 py-4 text-sm outline-none resize-y" placeholder="Hi Aidan, I'd like to discuss a potential collaboration..." required></textarea>
+                    </div>
+                    <button type="submit" 
+                            class="w-full py-4 bg-white hover:bg-slate-100 active:bg-slate-200 transition-all text-slate-950 font-semibold rounded-3xl text-sm tracking-wider">
+                        SEND MESSAGE
+                    </button>
+                </form>
+                <p class="text-xs text-slate-500 mt-4">This form is for demonstration. Please email me directly at <a href="mailto:Swenso44@msu.edu" class="text-indigo-400">Swenso44@msu.edu</a></p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="border-t border-slate-800 py-12">
+        <div class="max-w-7xl mx-auto px-6 text-center text-sm text-slate-500">
+            <p>
+                &copy; 2026 Aidan Swenson. Crafted with precision for the next generation of data-driven innovators.
+            </p>
+            <p class="mt-2 text-xs">Built on GitHub Pages • Michigan State University</p>
+        </div>
+    </footer>
+
+    <script>
+        // Tailwind script
+        function initializeTailwind() {
+            document.documentElement.style.setProperty('--accent', '#6366f1');
+        }
+
+        // Mobile menu
+        function initMobileMenu() {
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+                const icon = btn.querySelector('i');
+                if (menu.classList.contains('hidden')) {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                } else {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                }
+            });
+
+            // Close on link click
+            menu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    menu.classList.add('hidden');
+                    const icon = btn.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                });
+            });
+        }
+
+        // Project filtering
+        function initProjectFilters() {
+            const buttons = document.querySelectorAll('#filter-buttons button');
+            const cards = document.querySelectorAll('#projects-grid .project-card');
+
+            buttons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active from all
+                    buttons.forEach(b => b.classList.remove('active', 'bg-indigo-600', 'text-white'));
+                    buttons.forEach(b => b.classList.add('bg-slate-800', 'text-slate-300'));
+                    
+                    // Add active to clicked
+                    button.classList.add('active', 'bg-indigo-600', 'text-white');
+                    button.classList.remove('bg-slate-800', 'text-slate-300');
+
+                    const filter = button.getAttribute('data-filter');
+
+                    cards.forEach(card => {
+                        if (filter === 'all') {
+                            card.style.display = 'block';
+                        } else {
+                            if (card.getAttribute('data-category') === filter) {
+                                card.style.display = 'block';
+                            } else {
+                                card.style.display = 'none';
+                            }
+                        }
+                    });
+                });
+            });
+        }
+
+        // Contact form handler
+        function initContactForm() {
+            const form = document.getElementById('contact-form');
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const btn = form.querySelector('button');
+                const originalText = btn.innerHTML;
+                
+                btn.innerHTML = 'SENDING...';
+                btn.disabled = true;
+                
+                setTimeout(() => {
+                    btn.innerHTML = 'MESSAGE SENT! ✓';
+                    btn.style.background = '#10b981';
+                    
+                    setTimeout(() => {
+                        form.reset();
+                        btn.innerHTML = originalText;
+                        btn.style.background = '';
+                        btn.disabled = false;
+                        alert('Thank you! Your message has been noted. I will respond via email shortly.');
+                    }, 1800);
+                }, 1200);
+            });
+        }
+
+        // Smooth scroll for anchor links
+        function initSmoothScroll() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        e.preventDefault();
+                        const offset = 80;
+                        const bodyRect = document.body.getBoundingClientRect().top;
+                        const elementPosition = target.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition - bodyRect - offset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        }
+
+        // Skill bar animation on scroll
+        function initSkillBars() {
+            const skillBars = document.querySelectorAll('.skill-bar');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        skillBars.forEach(bar => {
+                            const width = bar.style.width;
+                            bar.style.width = '0';
+                            setTimeout(() => {
+                                bar.style.width = width;
+                            }, 100);
+                        });
+                        observer.disconnect();
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            const skillsSection = document.getElementById('skills');
+            if (skillsSection) observer.observe(skillsSection);
+        }
+
+        // Initialize everything
+        function initializePortfolio() {
+            initializeTailwind();
+            initMobileMenu();
+            initProjectFilters();
+            initContactForm();
+            initSmoothScroll();
+            initSkillBars();
+            
+            // Set initial filter button style
+            const allBtn = document.querySelector('#filter-buttons button[data-filter="all"]');
+            if (allBtn) {
+                allBtn.classList.add('bg-indigo-600', 'text-white');
+                allBtn.classList.remove('bg-slate-800', 'text-slate-300');
+            }
+        }
+
+        // Boot app
+        window.onload = initializePortfolio;
+    </script>
+</body>
+</html>
