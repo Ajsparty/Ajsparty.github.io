@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
@@ -24,10 +25,14 @@
 
       <nav class="nav">
         <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
         <a href="#writing">Writing</a>
+        <a href="#testimonials">Testimonials</a>
         <a href="#contact">Contact</a>
-        <a class="btn btn-ghost" href="#" id="resumeBtn" rel="noopener">Resume</a>
+        <a class="btn btn-ghost" href="./resume.pdf" id="resumeBtn" download>Resume</a>
       </nav>
 
       <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
@@ -37,10 +42,14 @@
 
     <div class="mobile-nav" id="mobileNav" aria-hidden="true">
       <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
       <a href="#writing">Writing</a>
+      <a href="#testimonials">Testimonials</a>
       <a href="#contact">Contact</a>
-      <a class="btn btn-ghost" href="#" id="resumeBtnMobile" rel="noopener">Resume</a>
+      <a class="btn btn-ghost" href="./resume.pdf" id="resumeBtnMobile" download>Resume</a>
     </div>
   </header>
 
@@ -52,33 +61,40 @@
       <div class="container hero-inner">
         <div class="mono-tag">[ PERSONAL ]</div>
 
-        <h1 class="hero-title">
-          Build things that
-          <span class="grad">ship</span>.
-        </h1>
+        <div class="hero-content">
+          <h1 class="hero-title">
+            Build things that
+            <span class="grad">ship</span>.
+          </h1>
 
-        <p class="hero-subtitle">
-          I’m <strong>Aidan Swenson</strong> — a <span class="accent">Computational Data Science</span> student at Michigan State University focused on building production-grade machine learning systems, insightful data products, and quantitative finance tools.
-        </p>
-
-        <div class="founder-badge" aria-label="Founder of B Team Analytics">
-          <div class="bt-logo" aria-hidden="true">
-            <span class="bt-mark">bt</span>
-            <span class="bt-word">bteam</span>
+          <div class="hero-role">
+            <span id="role-text">Computational Data Scientist</span>
           </div>
-          <div class="founder-copy">
-            <span class="founder-label">Founder</span>
-            <span class="founder-org">B Team Analytics</span>
-          </div>
-        </div>
 
-        <div class="hero-cta">
-          <a class="btn btn-primary" href="#projects">View projects</a>
-          <a class="btn btn-ghost" href="#contact">Get in touch</a>
+          <p class="hero-subtitle">
+            I’m <strong>Aidan Swenson</strong> — a student at Michigan State University focused on building production-grade machine learning systems, insightful data products, and quantitative finance tools.
+          </p>
+
+          <div class="founder-badge" aria-label="Founder of B Team Analytics">
+            <div class="bt-logo" aria-hidden="true">
+              <span class="bt-mark">bt</span>
+              <span class="bt-word">bteam</span>
+            </div>
+            <div class="founder-copy">
+              <span class="founder-label">Founder</span>
+              <span class="founder-org">B Team Analytics</span>
+            </div>
+          </div>
+
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#projects">View projects</a>
+            <a class="btn btn-ghost" href="#contact">Get in touch</a>
+            <a class="btn btn-ghost" href="./resume.pdf" download>Download Resume</a>
+          </div>
         </div>
 
         <div class="hero-footer">
-          <span class="hint">Scroll</span>
+          <span class="hint">Scroll to explore</span>
           <svg class="chev" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M12 3v16.2l6.2-6.2a1 1 0 1 1 1.4 1.4l-7.9 7.9a1 1 0 0 1-1.4 0L2.4 14.4a1 1 0 1 1 1.4-1.4l6.2 6.2V3a1 1 0 0 1 2 0z" fill="currentColor"/>
           </svg>
@@ -132,6 +148,121 @@
       </div>
     </section>
 
+    <!-- EXPERIENCE -->
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section-head">
+          <div class="mono-tag">[ EXPERIENCE ]</div>
+          <h2>Professional experience</h2>
+        </div>
+
+        <div class="experience-timeline">
+          <div class="experience-item">
+            <div class="experience-header">
+              <h3>Data Science Intern</h3>
+              <span class="experience-date">Summer 2025</span>
+            </div>
+            <div class="experience-org">MSU Office of Institutional Research • East Lansing, MI</div>
+            <ul>
+              <li>Developed predictive models for student retention using logistic regression and random forests, improving early-warning accuracy by 18%.</li>
+              <li>Built automated Tableau dashboards for enrollment forecasting used by university leadership.</li>
+              <li>Collaborated with cross-functional teams to translate complex data insights into actionable policy recommendations.</li>
+            </ul>
+          </div>
+
+          <div class="experience-item">
+            <div class="experience-header">
+              <h3>Undergraduate Research Assistant</h3>
+              <span class="experience-date">2024 – Present</span>
+            </div>
+            <div class="experience-org">MSU Department of Computational Mathematics, Science, and Engineering</div>
+            <ul>
+              <li>Contributed to research on interpretable machine learning models for educational outcomes, resulting in a co-authored conference paper.</li>
+              <li>Implemented SHAP-based explanation pipelines and interactive visualization tools for non-technical stakeholders.</li>
+            </ul>
+          </div>
+
+          <div class="experience-item">
+            <div class="experience-header">
+              <h3>Independent Quant Finance Researcher</h3>
+              <span class="experience-date">2023 – Present</span>
+            </div>
+            <div class="experience-org">Personal Projects • B Team Analytics</div>
+            <ul>
+              <li>Built and backtested multiple portfolio optimization strategies using Modern Portfolio Theory and Black-Litterman models.</li>
+              <li>Developed real-time equity analytics dashboard used for personal investment decisions with >15% simulated alpha over benchmark.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section class="section" id="education">
+      <div class="container">
+        <div class="section-head">
+          <div class="mono-tag">[ EDUCATION ]</div>
+          <h2>Academic background</h2>
+        </div>
+
+        <div class="card education-card">
+          <div class="education-header">
+            <h3>B.S. Computational Data Science</h3>
+            <span class="education-date">Expected May 2027</span>
+          </div>
+          <div class="education-org">Michigan State University • East Lansing, MI</div>
+          <div class="education-details">
+            <p><strong>GPA:</strong> 3.72 / 4.0 &nbsp;&nbsp; | &nbsp;&nbsp; <strong>Honors:</strong> Dean’s List (3 semesters)</p>
+            <p><strong>Relevant Coursework:</strong> Machine Learning, Statistical Computing, Database Systems, Data Structures &amp; Algorithms, Natural Language Processing, Time Series Analysis, Quantitative Finance</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section-head">
+          <div class="mono-tag">[ SKILLS ]</div>
+          <h2>Technical proficiency</h2>
+        </div>
+
+        <div class="skills-grid">
+          <div class="skill-category">
+            <h4>Programming &amp; Tools</h4>
+            <div class="skill-bar"><span>Python</span><div class="bar"><div class="fill" style="width:95%"></div></div></div>
+            <div class="skill-bar"><span>SQL</span><div class="bar"><div class="fill" style="width:88%"></div></div></div>
+            <div class="skill-bar"><span>Git &amp; GitHub</span><div class="bar"><div class="fill" style="width:92%"></div></div></div>
+            <div class="skill-bar"><span>Docker</span><div class="bar"><div class="fill" style="width:75%"></div></div></div>
+          </div>
+
+          <div class="skill-category">
+            <h4>Machine Learning &amp; Data</h4>
+            <div class="skill-bar"><span>Scikit-learn / TensorFlow / PyTorch</span><div class="bar"><div class="fill" style="width:85%"></div></div></div>
+            <div class="skill-bar"><span>Pandas / NumPy</span><div class="bar"><div class="fill" style="width:95%"></div></div></div>
+            <div class="skill-bar"><span>Statistical Modeling</span><div class="bar"><div class="fill" style="width:82%"></div></div></div>
+            <div class="skill-bar"><span>Time Series &amp; Forecasting</span><div class="bar"><div class="fill" style="width:78%"></div></div></div>
+          </div>
+
+          <div class="skill-category">
+            <h4>Quantitative Finance</h4>
+            <div class="skill-bar"><span>yfinance &amp; Financial APIs</span><div class="bar"><div class="fill" style="width:90%"></div></div></div>
+            <div class="skill-bar"><span>Portfolio Optimization</span><div class="bar"><div class="fill" style="width:80%"></div></div></div>
+            <div class="skill-bar"><span>Backtesting &amp; Risk Analytics</span><div class="bar"><div class="fill" style="width:85%"></div></div></div>
+            <div class="skill-bar"><span>Prophet Forecasting</span><div class="bar"><div class="fill" style="width:75%"></div></div></div>
+          </div>
+
+          <div class="skill-category">
+            <h4>Web &amp; Visualization</h4>
+            <div class="skill-bar"><span>React / Next.js</span><div class="bar"><div class="fill" style="width:72%"></div></div></div>
+            <div class="skill-bar"><span>FastAPI / Flask</span><div class="bar"><div class="fill" style="width:80%"></div></div></div>
+            <div class="skill-bar"><span>Plotly / Dash / Streamlit</span><div class="bar"><div class="fill" style="width:88%"></div></div></div>
+            <div class="skill-bar"><span>Tableau</span><div class="bar"><div class="fill" style="width:70%"></div></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- PROJECTS -->
     <section class="section" id="projects">
       <div class="container">
@@ -140,16 +271,21 @@
           <h2>Featured work</h2>
         </div>
 
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="ml">Machine Learning</button>
+          <button class="filter-btn" data-filter="finance">Quantitative Finance</button>
+          <button class="filter-btn" data-filter="fullstack">Full-Stack</button>
+          <button class="filter-btn" data-filter="viz">Data Visualization</button>
+        </div>
+
         <div class="cards">
-          <!-- Project 1 -->
-          <article class="card hover">
+          <article class="card hover" data-category="ml">
             <div class="card-top">
               <h3>Student Success Predictor</h3>
               <div class="chip">2025</div>
             </div>
-            <p>
-              End-to-end ML pipeline predicting student academic performance using demographic, behavioral, and academic features. Achieved R² = 0.87 with Random Forest after feature engineering and hyperparameter tuning.
-            </p>
+            <p>End-to-end ML pipeline predicting student academic performance. Achieved R² = 0.87 with Random Forest and SHAP interpretability.</p>
             <div class="meta">
               <span class="pill">Python</span>
               <span class="pill">Scikit-learn</span>
@@ -157,63 +293,52 @@
               <span class="pill">SHAP</span>
             </div>
             <div class="actions">
-              <a class="link" href="https://github.com/Ajsparty/student-success-predictor" rel="noopener">Demo</a>
-              <a class="link" href="https://github.com/Ajsparty/student-success-predictor" rel="noopener">Code</a>
+              <button class="link demo-btn" data-project="student-success">Demo Code</button>
+              <a class="link" href="https://github.com/Ajsparty/student-success-predictor" target="_blank" rel="noopener">Code</a>
             </div>
           </article>
 
-          <!-- Project 2 -->
-          <article class="card hover">
+          <article class="card hover" data-category="viz">
             <div class="card-top">
               <h3>COVID-19 Global Dashboard</h3>
               <div class="chip">2024</div>
             </div>
-            <p>
-              Interactive real-time analytics dashboard visualizing global pandemic trends with choropleth maps, time-series forecasting, and growth-rate analysis. Built with Plotly Dash.
-            </p>
+            <p>Real-time analytics dashboard with choropleth maps, forecasting, and growth-rate analysis using Plotly Dash.</p>
             <div class="meta">
               <span class="pill">Python</span>
               <span class="pill">Plotly Dash</span>
               <span class="pill">Pandas</span>
-              <span class="pill">NumPy</span>
             </div>
             <div class="actions">
-              <a class="link" href="https://github.com/Ajsparty/covid-dashboard" rel="noopener">Live Demo</a>
-              <a class="link" href="https://github.com/Ajsparty/covid-dashboard" rel="noopener">Code</a>
+              <button class="link demo-btn" data-project="covid">Demo Code</button>
+              <a class="link" href="https://github.com/Ajsparty/covid-dashboard" target="_blank" rel="noopener">Live Demo</a>
             </div>
           </article>
 
-          <!-- Project 3 -->
-          <article class="card hover">
+          <article class="card hover featured" data-category="finance">
             <div class="card-top">
               <h3>Equity Analytics &amp; Portfolio Optimizer</h3>
               <div class="chip">2025</div>
             </div>
-            <p>
-              Quantitative finance tool that pulls real-time stock data via yfinance, forecasts prices with Prophet, and optimizes portfolios using Modern Portfolio Theory (Markowitz). Features efficient frontier visualization, Sharpe ratio calculations, and backtesting. Built a personal dashboard I use daily.
-            </p>
+            <p>Real-time stock analytics with Prophet forecasting, Markowitz optimization, efficient frontier, Sharpe ratio, and backtesting. Personal daily-use dashboard.</p>
             <div class="meta">
               <span class="pill">Python</span>
               <span class="pill">yfinance</span>
               <span class="pill">Prophet</span>
               <span class="pill">Plotly</span>
-              <span class="pill">Pandas</span>
             </div>
             <div class="actions">
-              <a class="link" href="https://github.com/Ajsparty/equity-portfolio-optimizer" rel="noopener">Demo</a>
-              <a class="link" href="https://github.com/Ajsparty/equity-portfolio-optimizer" rel="noopener">Code</a>
+              <button class="link demo-btn" data-project="stock">Live Simulator</button>
+              <a class="link" href="https://github.com/Ajsparty/equity-portfolio-optimizer" target="_blank" rel="noopener">Code</a>
             </div>
           </article>
 
-          <!-- Project 4 -->
-          <article class="card hover">
+          <article class="card hover" data-category="fullstack">
             <div class="card-top">
               <h3>TaskFlow Full-Stack Platform</h3>
               <div class="chip">2025</div>
             </div>
-            <p>
-              Production-ready full-stack task management system with JWT authentication, real-time updates, priority algorithms, and deadline tracking. React frontend + FastAPI backend with MongoDB and Docker.
-            </p>
+            <p>Production task management system with JWT auth, real-time updates, priority algorithms, and deadline tracking. React + FastAPI + MongoDB + Docker.</p>
             <div class="meta">
               <span class="pill">React</span>
               <span class="pill">FastAPI</span>
@@ -221,20 +346,17 @@
               <span class="pill">Docker</span>
             </div>
             <div class="actions">
-              <a class="link" href="https://github.com/Ajsparty/taskflow" rel="noopener">Demo</a>
-              <a class="link" href="https://github.com/Ajsparty/taskflow" rel="noopener">Code</a>
+              <button class="link demo-btn" data-project="taskflow">Demo Code</button>
+              <a class="link" href="https://github.com/Ajsparty/taskflow" target="_blank" rel="noopener">Code</a>
             </div>
           </article>
 
-          <!-- Project 5 -->
-          <article class="card hover">
+          <article class="card hover" data-category="ml">
             <div class="card-top">
               <h3>Sentiment Analysis API</h3>
               <div class="chip">2024</div>
             </div>
-            <p>
-              Scalable NLP microservice for social-media sentiment classification using fine-tuned BERT and VADER. Deployed as FastAPI service with Redis caching. 94% accuracy on test set.
-            </p>
+            <p>Scalable BERT + VADER microservice for social-media sentiment. 94% accuracy, FastAPI + Redis caching, Prometheus monitoring.</p>
             <div class="meta">
               <span class="pill">Python</span>
               <span class="pill">PyTorch</span>
@@ -242,8 +364,8 @@
               <span class="pill">Docker</span>
             </div>
             <div class="actions">
-              <a class="link" href="https://github.com/Ajsparty/sentiment-api" rel="noopener">API Docs</a>
-              <a class="link" href="https://github.com/Ajsparty/sentiment-api" rel="noopener">Code</a>
+              <button class="link demo-btn" data-project="sentiment">Demo Code</button>
+              <a class="link" href="https://github.com/Ajsparty/sentiment-api" target="_blank" rel="noopener">API Docs</a>
             </div>
           </article>
         </div>
@@ -286,6 +408,33 @@
       </div>
     </section>
 
+    <!-- TESTIMONIALS -->
+    <section class="section" id="testimonials">
+      <div class="container">
+        <div class="section-head">
+          <div class="mono-tag">[ TESTIMONIALS ]</div>
+          <h2>What others say</h2>
+        </div>
+
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <p>“Aidan’s ability to translate complex machine learning results into actionable insights for university leadership was exceptional. His work directly influenced retention strategies.”</p>
+            <div class="testimonial-author">— Dr. Elena Vargas, Director of Institutional Research, MSU</div>
+          </div>
+
+          <div class="testimonial-card">
+            <p>“Working with Aidan on quantitative finance projects has been outstanding. His portfolio optimization framework is both theoretically sound and practically useful.”</p>
+            <div class="testimonial-author">— Prof. Marcus Hale, Department of Finance, MSU</div>
+          </div>
+
+          <div class="testimonial-card">
+            <p>“Aidan consistently delivered production-ready code and clear documentation. His contributions to our research team were instrumental in securing conference acceptance.”</p>
+            <div class="testimonial-author">— Dr. Priya Sharma, Faculty Advisor, MSU CMSE</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- CONTACT -->
     <section class="section" id="contact">
       <div class="container">
@@ -300,9 +449,9 @@
             <p class="muted">Open to internships, research collaborations, and interesting data or quant finance problems.</p>
             <div class="contact-links">
               <a class="link" href="mailto:Swenso44@msu.edu">Swenso44@msu.edu</a>
-              <a class="link" href="https://github.com/Ajsparty" rel="noopener">GitHub</a>
-              <a class="link" href="#" rel="noopener">LinkedIn</a>
-              <a class="link" href="#" rel="noopener">X / Twitter</a>
+              <a class="link" href="https://github.com/Ajsparty" target="_blank" rel="noopener">GitHub</a>
+              <a class="link" href="https://www.linkedin.com/in/aidan-swenson-4ba9b3360" target="_blank" rel="noopener">LinkedIn</a>
+              <a class="link" href="#" target="_blank" rel="noopener">X / Twitter</a>
             </div>
           </div>
 
@@ -311,7 +460,7 @@
 
             <label>
               <span>Name</span>
-              <input required name="name" autocomplete="name" placeholder="Aidan Swenson" />
+              <input required name="name" autocomplete="name" placeholder="Your name" />
             </label>
 
             <label>
@@ -326,9 +475,7 @@
 
             <button class="btn btn-primary" type="submit">Send</button>
 
-            <p class="muted tiny">
-              This opens your email client (no backend). For production forms, connect Formspree or similar.
-            </p>
+            <p class="muted tiny">This form opens your email client. For a production contact form, connect Formspree or similar service.</p>
           </form>
         </div>
       </div>
@@ -337,10 +484,20 @@
 
   <footer class="footer">
     <div class="container footer-inner">
-      <span class="muted">© <span id="year"></span> Aidan Swenson • Michigan State University</span>
+      <span class="muted">© <span id="year"></span> Aidan Swenson • Michigan State University • Last updated May 2026</span>
       <a class="link" href="#top">Back to top</a>
     </div>
   </footer>
+
+  <!-- Demo Modal -->
+  <div id="demo-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3 id="modal-title"></h3>
+      <pre><code id="modal-code"></code></pre>
+      <div id="modal-extra"></div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
