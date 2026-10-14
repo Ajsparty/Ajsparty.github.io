@@ -1,16 +1,19 @@
 # Aidan Swenson - Portfolio
 
-Simple single-page site I made to show some class projects. HTML + Tailwind + a bit of vanilla JS. No framework.
+Personal portfolio website showcasing projects in data science, machine learning, web development, and quantitative analysis.
 
-Live at https://ajsparty.github.io once GitHub Pages is on (Settings → Pages → main / root).
+Built with HTML, Tailwind CSS, and vanilla JavaScript.
 
-## What's on it
-- Student grade predictor (ML)
-- COVID dashboard (viz)
-- TaskFlow (full-stack skeleton)
+Live site: https://ajsparty.github.io
 
-Edit `index.html` to change text or add a resume PDF under assets/.
+## Projects Featured
+- Student Performance Predictor (ML)
+- COVID-19 Dashboard (Data Visualization)
+- TaskFlow (Full-Stack Application)
 
-Email: Swenso44@msu.edu
+## Customization
+Edit `index.html` to update content. Place a resume PDF in the assets directory if desired.
 
-MSU Computational Data Science, class of 2027.
+Contact: Swenso44@msu.edu
+
+Developed and maintained by Aidan Swenson.
